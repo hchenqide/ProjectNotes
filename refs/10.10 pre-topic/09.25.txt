@@ -1,0 +1,5 @@
+software based self test
+bounded model checking
+sat checkable
+Craig interpolation
+automatic test pattern generation

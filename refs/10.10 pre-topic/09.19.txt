@@ -1,0 +1,29 @@
+cvc5
+Isabelle/HOL
+verified SeL4 Microkernel
+
+SMT solver. automatic proof
+FOL expressive logic
+Amazon's Zelkova Tool
+
+check the solver
+check the answer, make the answer checkable 
+
+reconstructing cvc5 proofs in Isabelle 
+
+sledgehammer gets some information from external provers to reconstruct the proof, filter out the core lemmas
+
+translate to smt problem, send to cvc5 solver
+
+sat: give an assignment 
+unsat: 
+proof certificate to be checked
+checking granularity
+transform steps with logic rules
+apply rewrite rules to directly simplify formula
+those rules are stored in rare database, and translated into lemmas in Isabelle 
+
+bit vector checking
+
+cvc5 find proof
+Isabelle check

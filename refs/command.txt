@@ -1,0 +1,18 @@
+./minisat/run_fuzz.sh ./test/cnfuzz ./minisat/build/fuzz ./test/drup-trim
+../run_fuzz.sh ./cnfuzz ./fuzz ./drup-trim
+
+run_fuzz() {
+    local seed=$1
+    ./test/cnfuzz "$seed" > temp.cnf
+    ./minisat/build/fuzz temp.cnf temp.proof
+    ./test/drup-trim temp.cnf temp.proof
+}
+
+./cadical/build/cadical temp.cnf
+
+./minisat/build/minisat temp.cnf
+
+
+cnf_file="./test/basic/trivial.cnf"
+./minisat/build/fuzz $cnf_file temp.proof
+./test/drup-trim $cnf_file temp.proof
