@@ -1,0 +1,39 @@
+{
+  "version": "2.0.0",
+  "tasks": [
+    {
+      "label": "build minisat",
+      "type": "shell",
+      "command": "make",
+      "args": [],
+      "group": {
+        "kind": "build",
+        "isDefault": true
+      },
+      "problemMatcher": [],
+      "detail": "build fuzz",
+      "options": {
+        "cwd": "${workspaceFolder}/minisat/build"
+      }
+    },
+    {
+      "label": "build test",
+      "type": "shell",
+      "command": "g++",
+      "args": [
+        "-g",
+        "${workspaceFolder}/test/test.cpp",
+        "-o",
+        "${workspaceFolder}/test/test.out"
+      ],
+      "group": {
+        "kind": "build",
+        "isDefault": true
+      },
+      "problemMatcher": [
+        "$gcc"
+      ],
+      "detail": "Task to compile test.cpp"
+    }
+  ]
+}
